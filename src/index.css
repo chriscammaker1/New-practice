@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Outfit', -apple-system, sans-serif;
+    --font-editorial: 'Newsreader', 'Playfair Display', Georgia, Cambria, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Crisp pure white clinical aesthetic: pure #FFFFFF canvas, deep navy text #1B2A4A, subtle porcelain #F8FAFB accents, muted sage, and warm gold highlights */
+    --color-canvas: #FFFFFF;
+    --color-surface: #FFFFFF;
+    --color-surface-subtle: #F8FAFB;
+    --color-surface-soft: #F1F5F8;
+    --color-border: #E8EEF3;
+    --color-border-subtle: #F0F4F8;
+    --color-text-main: #1B2A4A;
+    --color-text-navy: #1B2A4A;
+    --color-text-secondary: #2C4B68;
+    --color-text-slate: #486581;
+    --color-text-soft: #627D98;
+    --color-accent-gold: #C59B27;
+    --color-accent-gold-soft: #FAF3E0;
+    --color-accent-sage: #7A9A8B;
+    --color-accent-sage-soft: #EEF4F0;
+  }
+  
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: #FFFFFF;
+    color: var(--color-text-main);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    color: var(--color-text-main);
+  }
+
+  .font-editorial {
+    font-family: var(--font-editorial);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Subtle canvas pattern */
+.bg-canvas-dots {
+  background-image: radial-gradient(rgba(72, 101, 129, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-canvas-dots-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Responsive overrides when emulating mobile device container in desktop preview */
+.viewport-mobile .lg\:grid-cols-4,
+.viewport-mobile .md\:grid-cols-3,
+.viewport-mobile .md\:grid-cols-2,
+.viewport-mobile .lg\:grid-cols-12,
+.viewport-mobile .grid-cols-2,
+.viewport-mobile .sm\:grid-cols-2,
+.viewport-mobile .sm\:grid-cols-3 {
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+}
+
+.viewport-mobile .lg\:col-span-5,
+.viewport-mobile .lg\:col-span-7,
+.viewport-mobile .lg\:col-span-2,
+.viewport-mobile .lg\:col-span-4,
+.viewport-mobile .md\:col-span-5,
+.viewport-mobile .md\:col-span-4 {
+  grid-column: span 1 / span 1 !important;
+}
+
+.viewport-mobile .flex-row,
+.viewport-mobile .sm\:flex-row,
+.viewport-mobile .md\:flex-row,
+.viewport-mobile .lg\:flex-row {
+  flex-direction: column !important;
+}
+
+.viewport-mobile .sm\:p-10,
+.viewport-mobile .lg\:p-16 {
+  padding: 1.25rem !important;
+}
+

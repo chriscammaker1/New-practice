@@ -1,0 +1,8 @@
+{
+  "name": "COMING SOON WEBSITE TEST",
+  "description": "Practice information coming soon",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
